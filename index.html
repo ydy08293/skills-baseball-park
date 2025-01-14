@@ -120,8 +120,6 @@
     </div>
 </div>
 
-<div>   </div>
-
 <div class="accrodion">
     <input type="checkbox" id="btn01">
     <label for="btn01">타율</label>
@@ -145,6 +143,36 @@
     <div class="response"><p>(1위) 일세이, (2위) 이세이, (3위) 삼세이, (4위) 사세이, (5위)</p></div>
 </div>
 
+
+<div class="container chart_main">
+    <h1>방문자 수 조회</h1>
+    <div class="chart_menu">
+        <select name="league" id="league">
+            <option value="0">나이트 리그</option>
+            <option value="1">주말 리그</option>
+            <option value="2">새벽 리그</option>
+        </select>
+
+        <select name="week" id="week">
+            <option value="0">월</option>
+            <option value="1">화</option>
+            <option value="2">수</option>
+            <option value="3">목</option>
+            <option value="4">금</option>
+            <option value="5">토</option>
+            <option value="6">일</option>
+        </select>
+        <button onclick="widthChart()">가로보기</button>
+        <button onclick="heightChart()">세로보기</button>
+    </div>
+
+    <div id="chartDiv"></div>
+
+
+</div>
+
+
+
 <footer>
     <div id="footer-menu">
         <img class="logo" src="./logo.png">
@@ -160,5 +188,9 @@
         </div>
     </div>
 </footer>
+<script src="./script.js"></script>
+<script>
+    widthChart();
+</script>
 </body>
 </html>

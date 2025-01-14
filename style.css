@@ -376,3 +376,86 @@ footer{
   margin-left: 300px;
   margin-top: 20px;
 }
+
+
+
+h1{
+  text-align: center;
+}
+
+.chart_menu{
+  text-align: center;
+}
+
+.chart_menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.chart_menu button,
+.chart_menu select
+{
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  cursor:  pointer;
+}
+
+.chart_width{
+  width: 600px;
+  height: 600px;
+  background-color: antiquewhite;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  text-align: left;
+}
+
+.chart_height{
+  width: 600px;
+  height: 600px;
+  background-color: antiquewhite;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.width_parents {
+  display: flex;
+  align-items: center;
+}
+
+.height_parents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.width{
+  height: 80px;
+  background-color: black;
+  margin: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.height{
+  height: 100px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+}
