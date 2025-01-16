@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기능경기대회</title>
+    <link rel="stylesheet" href="./선수제공파일/bootstrap-5.2.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -36,7 +37,7 @@
             <div class="nav">
               <button class="material-icons"> < </button>
               <p class="current-date">April 2024</p>
-              <button class="material-icons"> ></span>
+              <button class="material-icons"> > </span>
             </div>
           </header>
           <div class="calendar">
@@ -144,35 +145,70 @@
 </div>
 
 
-<div class="container chart_main">
-    <h1>방문자 수 조회</h1>
-    <div class="chart_menu">
-        <select name="league" id="league">
-            <option value="0">나이트 리그</option>
-            <option value="1">주말 리그</option>
-            <option value="2">새벽 리그</option>
-        </select>
 
-        <select name="week" id="week">
-            <option value="0">월</option>
-            <option value="1">화</option>
-            <option value="2">수</option>
-            <option value="3">목</option>
-            <option value="4">금</option>
-            <option value="5">토</option>
-            <option value="6">일</option>
-        </select>
-        <button onclick="widthChart()">가로보기</button>
-        <button onclick="heightChart()">세로보기</button>
-    </div>
-
-    <div id="chartDiv"></div>
-
-
+<h1>방문자 수 조회</h1>
+<div class="chart_menu">
+    <select name="league" id="league">
+        <option value="0">나이트 리그</option>
+        <option value="1">주말 리그</option>
+        <option value="2">새벽 리그</option>
+    </select>
+    <select name="week" id="week">
+        <option value="0">월</option>
+        <option value="1">화</option>
+        <option value="2">수</option>
+        <option value="3">목</option>
+        <option value="4">금</option>
+        <option value="5">토</option>
+        <option value="6">일</option>
+    </select>
+    <button onclick="widthChart()">가로보기</button>
+    <button onclick="heightChart()">세로보기</button>
 </div>
+<div id="chartDiv"></div>
+<!-- 방문자 차트 영역 끝 -->
+<!-- 굿즈 판매 영역 시작 -->
+ <div id="goods">
+    <h1>GOODS 판매량 확인</h1>
+    <div class="goodsSale_menu">
+        <div id="goodsGroup"></div>
+        <select id="sort" onchange="goodsListSort()">
+            <option value="saleDesc">판매량 내림차순</option>
+            <option value="saleAsc">판매량 오름차순</option>
+            <option value="priceDesc">가격 내림차순</option>
+            <option value="priceAsc">가격 오름차순</option>
+        </select>
+    </div>
+    <div id="bestGoods"></div>
+    <div id="goodsList"></div>
+</div>
+<!-- 굿즈 판매 영역 끝 -->
 
+<!-- 수정제안 모달 -->
+<div id="goodsModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div id="goodsModalTitle"></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="goodsEdit" class="modal-body">
+            <div id="goodsEditImg"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="addImg()" class="btn btn-primary">이미지 추가</button>
+          <input id="imgInput" type="file" onchange="addEditimg()">
+          <button type="button" onclick="addTextBox()" class="btn btn-warning">글상자 추가</button>
+          <button type="button" class="btn btn-dark">삭제</button>
+          <button type="button" class="btn btn-danger">다운로드</button>
+          <button type="button" class="btn btn-success">글상자 이동 및 회전</button>
+          <button type="button" onclick="deleteTextBox()" class="btn btn-secondary">원래대로</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
+<!-- 푸터 -->
 <footer>
     <div id="footer-menu">
         <img class="logo" src="./logo.png">
@@ -188,9 +224,14 @@
         </div>
     </div>
 </footer>
+<script src="./선수제공파일/jquery-3.7.1.min.js"></script>
+<script src="./선수제공파일/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
 <script src="./script.js"></script>
 <script>
     widthChart();
+    goodsGroupAdd();
+    goodsListSort();
 </script>
 </body>
 </html>
+
